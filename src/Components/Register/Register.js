@@ -9,10 +9,12 @@ const Register = () => {
         <div className='row'>
           <div className='col-md-3'></div>
           <div className='col-md-6'>
-            <h1 className='mt-5'>Please Login</h1>
+            <h1 className='my-5'>Please Register</h1>
             <Form>
               <Form.Group className='mb-3' controlId='formBasicEmail'>
-                <Form.Label>Email address</Form.Label>
+                <Form.Control type='text' placeholder='Name' className='p-2' />
+              </Form.Group>
+              <Form.Group className='mb-3' controlId='formBasicEmail'>
                 <Form.Control
                   type='email'
                   placeholder='Enter email'
@@ -24,10 +26,16 @@ const Register = () => {
               </Form.Group>
 
               <Form.Group className='mb-3' controlId='formBasicPassword'>
-                <Form.Label>Password</Form.Label>
                 <Form.Control
                   type='password'
                   placeholder='Password'
+                  className='p-2'
+                />
+              </Form.Group>
+              <Form.Group className='mb-3' controlId='formBasicPassword'>
+                <Form.Control
+                  type='password'
+                  placeholder='Retype Password'
                   className='p-2'
                 />
               </Form.Group>
@@ -35,7 +43,7 @@ const Register = () => {
                 Submit
               </Button>
             </Form>
-            <p>
+            <p className='my-3'>
               Already Registered ?<Link to='/login'>Login</Link>
             </p>
           </div>

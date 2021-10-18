@@ -31,11 +31,19 @@ const Login = () => {
                   className='p-2'
                 />
               </Form.Group>
-              <Button variant='primary' type='submit'>
+              <Button
+                variant='light'
+                type='submit'
+                className='my-3 border-dark'
+              >
+                <i className='fab fa-google me-2 text-primary p-2'></i> Google
+              </Button>
+              <br />
+              <Button variant='primary' type='submit' className='w-100'>
                 Submit
               </Button>
             </Form>
-            <p>
+            <p className='my-3'>
               Are you a new User ?<Link to='/register'>Register</Link>
             </p>
           </div>
