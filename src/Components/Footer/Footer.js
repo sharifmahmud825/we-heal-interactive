@@ -62,13 +62,13 @@ const Footer = () => {
             </h5>
             <h5 className='my-3 text-white'>
               <span className='me-3'>
-                <i class='fas fa-map-marker-alt'></i>
+                <i className='fas fa-map-marker-alt'></i>
               </span>
               2130 Fulton Street San Diego CA 94117-1080 USA
             </h5>
             <h5 className='my-3 text-white'>
               <span className='me-3'>
-                <i class='fas fa-envelope-open-text'></i>
+                <i className='fas fa-envelope-open-text'></i>
               </span>
               info@gmail.com
             </h5>
