@@ -1,5 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
+import AboutUs from './Components/AboutUS/AboutUs';
+import CallToAction from './Components/Appointment/CallToAction';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
@@ -23,11 +25,17 @@ function App() {
           <Route exact path='/services'>
             <Services></Services>
           </Route>
-          <Route>
+          <Route path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='/about'>
+            <AboutUs></AboutUs>
           </Route>
           <Route path='/register'>
             <Register></Register>
+          </Route>
+          <Route path='/appointment'>
+            <CallToAction></CallToAction>
           </Route>
           <Route path='*'>
             <NotFound></NotFound>

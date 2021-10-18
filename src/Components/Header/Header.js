@@ -32,9 +32,13 @@ const Header = () => {
               <Link to='/doctors' className='nav-link'>
                 <Nav.Link href='#doctors'>Doctors</Nav.Link>
               </Link>
+              <Link to='/about' className='nav-link'>
+                <Nav.Link href='#about'>About Us</Nav.Link>
+              </Link>
               <Link to='/login'>
                 <button className='btn btn-primary'>Login</button>
               </Link>
+
               <Navbar.Text className=''>
                 <Nav.Link href='#user'>mark otto</Nav.Link>
               </Navbar.Text>
