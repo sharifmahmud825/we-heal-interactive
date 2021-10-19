@@ -3,6 +3,8 @@ import './App.css';
 import AboutUs from './Components/AboutUS/AboutUs';
 import CallToAction from './Components/Appointment/CallToAction';
 import Contact from './Components/Contact/Contact';
+import Doctors from './Components/Doctor/Doctors';
+import Doctor from './Components/Doctor/Doctors';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
@@ -10,7 +12,6 @@ import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
 import Register from './Components/Register/Register';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
-import Services from './Components/Services/Services';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path='/services/:serviceId'>
             <ServiceDetails></ServiceDetails>
+          </Route>
+          <Route path='/doctors'>
+            <Doctors></Doctors>
           </Route>
           <Route path='/login'>
             <Login></Login>
