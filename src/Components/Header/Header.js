@@ -37,6 +37,9 @@ const Header = () => {
               <Link to='/contact' className='nav-link'>
                 <Nav.Link href='#contact'>Contact Us</Nav.Link>
               </Link>
+              <Link to='/appointment' className='nav-link'>
+                <Nav.Link href='#appointment'>Appointment</Nav.Link>
+              </Link>
 
               {user.displayName ? (
                 <div className='d-flex'>
