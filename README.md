@@ -1,6 +1,6 @@
 # We Heal
 
-(https://we-heal.web.app/home).
+(https://we-heal.web.app/).
 
 ## About This Web app
 
