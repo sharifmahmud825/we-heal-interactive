@@ -4,8 +4,8 @@ const Doctor = (props) => {
   const { img, name, specialist, description, phone } = props.doctor;
   return (
     <div>
-      <div className='col my-3'>
-        <div className='card border-3 w-100 p-3'>
+      <div className='col my-3 '>
+        <div className='card border-3 w-100 p-3 bg-light'>
           <img
             src={img}
             className='card-img-top img-fluid '

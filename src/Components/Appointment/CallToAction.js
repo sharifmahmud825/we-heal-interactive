@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CallToAction = () => {
   return (
@@ -13,7 +14,9 @@ const CallToAction = () => {
               </h1>
               <h4 className='my-4'>Get Your Quote or Call:</h4>
               <h1 className='my-4'>(0080) 123-453-789</h1>
-              <button className='btn btn-primary'> Appointment</button>
+              <Link to='/appointment'>
+                <button className='btn btn-primary'> Appointment</button>
+              </Link>
             </div>
           </div>
           <div className='col-md-6'>

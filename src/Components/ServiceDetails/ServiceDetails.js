@@ -1,5 +1,6 @@
 import { useParams } from 'react-router';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();
@@ -14,7 +15,6 @@ const ServiceDetails = () => {
   const { service, description, img, expert, job } = details;
   return (
     <div>
-      <h2>Details of : {serviceId}</h2>
       <div className='row p-3'>
         <div className='col-md-3'></div>
         <div className='col-md-6'>
@@ -30,9 +30,11 @@ const ServiceDetails = () => {
               Specialist Doctor: <span className='text-primary'>{expert}</span>
             </h4>
             <p>{job}, MBBS</p>
-            <button className='btn btn-primary w-100 ms-auto mb-5'>
-              Get Appointment
-            </button>
+            <Link to='/appointment'>
+              <button className='btn btn-primary w-100 ms-auto mb-5'>
+                Get Appointment
+              </button>
+            </Link>
           </div>
         </div>
         <div className='col-md-3'></div>

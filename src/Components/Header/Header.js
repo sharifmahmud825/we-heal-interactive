@@ -38,10 +38,12 @@ const Header = () => {
                 <Nav.Link href='#contact'>Contact Us</Nav.Link>
               </Link>
 
-              {user.email ? (
+              {user.displayName ? (
                 <div className='d-flex'>
                   <Navbar.Text className=''>
-                    <Nav.Link href='#user'>Signed in as: {user.email}</Nav.Link>
+                    <Nav.Link href='#user'>
+                      Signed in as: {user.displayName}
+                    </Nav.Link>
                   </Navbar.Text>
                   <button onClick={logOut} className='btn btn-danger ms-2'>
                     Log Out
