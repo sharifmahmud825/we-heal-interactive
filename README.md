@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# We Heal React Project app with firebase authentication
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+(https://we-heal.web.app/home).
 
 ## Available Scripts
 
