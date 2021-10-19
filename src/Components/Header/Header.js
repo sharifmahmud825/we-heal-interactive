@@ -1,8 +1,10 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../useFirebase/useFirebase';
 
 const Header = () => {
+  const { user, logOut } = useFirebase();
   return (
     <div>
       <Navbar
@@ -26,22 +28,30 @@ const Header = () => {
               <Link to='/home' className='nav-link'>
                 <Nav.Link href='#home'>Home</Nav.Link>
               </Link>
-              {/* <Link to='/services' className='nav-link'>
-                <Nav.Link href='#services'>Services</Nav.Link>
-              </Link> */}
               <Link to='/doctors' className='nav-link'>
                 <Nav.Link href='#doctors'>Doctors</Nav.Link>
               </Link>
               <Link to='/about' className='nav-link'>
                 <Nav.Link href='#about'>About Us</Nav.Link>
               </Link>
-              <Link to='/login'>
-                <button className='btn btn-primary'>Login</button>
+              <Link to='/contact' className='nav-link'>
+                <Nav.Link href='#contact'>Contact Us</Nav.Link>
               </Link>
 
-              <Navbar.Text className=''>
-                <Nav.Link href='#user'>mark otto</Nav.Link>
-              </Navbar.Text>
+              {user.email ? (
+                <div className='d-flex'>
+                  <Navbar.Text className=''>
+                    <Nav.Link href='#user'>Signed in as: {user.email}</Nav.Link>
+                  </Navbar.Text>
+                  <button onClick={logOut} className='btn btn-danger ms-2'>
+                    Log Out
+                  </button>
+                </div>
+              ) : (
+                <Link to='/login'>
+                  <button className='btn btn-primary'>Login</button>
+                </Link>
+              )}
             </Navbar.Collapse>
           </Nav>
         </Container>

@@ -1,55 +1,68 @@
-import React from 'react';
-import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { Link } from 'react-router-dom';
+import initializeAuthentication from '../../Firebase/firebase.init';
+
+initializeAuthentication();
 const Register = () => {
+  const [user, setUser] = useState({});
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const auth = getAuth();
+  // handle input fields
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  //   handle button for login
+  const handleRegistration = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password).then((result) => {
+      const user = result.user;
+      setUser(user);
+      console.log(user);
+    });
+  };
   return (
     <div>
-      <Container>
+      <div className='container'>
         <div className='row'>
           <div className='col-md-3'></div>
           <div className='col-md-6'>
             <h1 className='my-5'>Please Register</h1>
-            <Form>
-              <Form.Group className='mb-3' controlId='formBasicEmail'>
-                <Form.Control type='text' placeholder='Name' className='p-2' />
-              </Form.Group>
-              <Form.Group className='mb-3' controlId='formBasicEmail'>
-                <Form.Control
+            <form onSubmit={handleRegistration}>
+              <div class='mb-3'>
+                <input
+                  onBlur={handleEmail}
                   type='email'
-                  placeholder='Enter email'
-                  className='p-2'
+                  class='form-control'
+                  placeholder='Email'
                 />
-                <Form.Text className='text-muted'>
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
-
-              <Form.Group className='mb-3' controlId='formBasicPassword'>
-                <Form.Control
+              </div>
+              <div class='mb-3'>
+                <input
+                  onBlur={handlePassword}
                   type='password'
+                  class='form-control'
                   placeholder='Password'
-                  className='p-2'
                 />
-              </Form.Group>
-              <Form.Group className='mb-3' controlId='formBasicPassword'>
-                <Form.Control
-                  type='password'
-                  placeholder='Retype Password'
-                  className='p-2'
-                />
-              </Form.Group>
-              <Button variant='primary' type='submit'>
+              </div>
+              <button type='submit' class='btn btn-primary w-100'>
                 Submit
-              </Button>
-            </Form>
+              </button>
+            </form>
             <p className='my-3'>
               Already Registered ?<Link to='/login'>Login</Link>
             </p>
           </div>
           <div className='col-md-3'></div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

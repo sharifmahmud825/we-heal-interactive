@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AboutUs from './Components/AboutUS/AboutUs';
 import CallToAction from './Components/Appointment/CallToAction';
+import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path='/about'>
             <AboutUs></AboutUs>
+          </Route>
+          <Route path='/contact'>
+            <Contact></Contact>
           </Route>
           <Route path='/register'>
             <Register></Register>
